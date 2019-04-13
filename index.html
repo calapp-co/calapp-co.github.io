@@ -1,0 +1,71 @@
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    const CHROME_APP_STORE_URL = "https://chrome.google.com/webstore/detail/pmppdciefklaghoocckgagpahmiibjnf";
+
+
+    const verifyInviteCode = function(inviteCode) {
+
+        if (inviteCode) {
+
+            // e.g. a1bd9091
+            if (inviteCode.search(/\??[a-z0-9]{8}/i) > -1) {
+
+                alert('Invite code verified.\n\nPlease click "Add To Chrome" to install when Google\'s Chrome Web Store loads.');
+                window.location.replace(CHROME_APP_STORE_URL);
+
+            } else {
+                alert('Hmmm, that invite code doesn\'t seem quite right.\n\nPlease try again.');
+            }
+
+        }
+
+    };
+
+    verifyInviteCode(window.location.search);
+
+    const checkExist = setInterval(function() {
+        if ($('.form-wrapper').length) {
+
+            clearInterval(checkExist);
+
+            $(".form-wrapper").append(
+                '<form' +
+                ' data-remote="true">' +
+                '<input id="invite_text" type="text" className="template-form-control form-control" name="Email"' +
+                ' placeholder="Enter your invite code">' +
+                '<input id="invite_button" type="submit" className="btn" value="I have an invite code">' +
+                '</form>'
+            );
+
+            $("#invite_button").click(function(e) {
+                e.preventDefault();
+
+                verifyInviteCode($("#invite_text").val());
+
+            });
+
+        }
+    }, 50);
+
+</script>
+
+
+<!-- start Growth Tools code -->
+<script type="text/javascript">
+    (function() {
+        var l = window.location;
+        var e = document.createElement('script');
+        e.src = 'https://welcomely.growthtools.com/s/PDRZLKkzNtUSEXm.js?l='+l;
+        e.async = true; e.type = 'text/javascript';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(e, s);
+    })();
+</script>
+<!-- end Growth Tools code -->
+
+<!-- TODO remove <a class="watermark" href="https://wanttogoviral.com?utm_source=watermark"></a> -->

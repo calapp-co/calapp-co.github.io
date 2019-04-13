@@ -1,0 +1,54 @@
+input, textarea {
+    border: none;
+    font-size: large;
+    color: red;
+    background-color: transparent;
+}
+input[type=number] {
+    width: 35px;
+    margin-left: 10px;
+    color: red;
+}
+#MEETING_LENGTH_MINS {
+    margin-left: 15px;
+    width: 45px;
+}
+.status {
+    color: red;
+    font-weight: bold;
+}
+.save {
+    font-size: large;
+    vertical-align: middle;
+}
+#dates-and-times-border {
+    border: 1px dashed;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    padding: 4px;
+}
+#dates-and-times {
+    font-size: larger;
+    color: gray;
+}
+.red {
+    color: red;
+    font-size: larger;
+}
+.editable {
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+}
+.bgimg {
+    width: 1015px;
+    height: 430px;
+    background: url('gmail.png') no-repeat;
+    padding-top: 90px;
+    padding-left: 15px;
+}
+.calapp-logo {
+    vertical-align: middle;
+    /*width: 32px;*/
+    height: 32px;
+}
