@@ -1,40 +1,8 @@
-<script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous"></script>
-
-<script>
-
-    const removeWatermark = setInterval(function() {
-        if ($('.watermark').length) {
-            clearInterval(removeWatermark);
-            $(".watermark").remove();
-        }
-    }, 50);
-
-    const changeLinkedInShareUrl = setInterval(function() {
-        if ($('.call-to-action').length) {
-            clearInterval(changeLinkedInShareUrl);
-
-            $(".call-to-action").find("h3").text("Share the movement to Simplify Arranging Meetings to LinkedIn in 1 click");
-            $(".call-to-action").find("a").attr("href", "https://linkedin.com/oauth/v2/authorization?client_id=78qc2vpo15nubq&redirect_uri=https%3A%2F%2Fgoviral.growthtools.com%2Flinkedin%2Foauth%2Fcallback&response_type=code&scope=r_liteprofile+r_emailaddress+w_member_social&state=d8bf360e11db6dfa49d826460e3392ca");
-
-        }
-    }, 50);
-
-
-    const insertDisclaimer = setInterval(function() {
-        if ($('.decline-link').length) {
-            clearInterval(insertDisclaimer);
-
-            $(".decline-link").prepend("<small>Powered by our partner GoViral. Neither we nor GoViral access any of your LinkedIn personal information.</small><br/><br/>");
-
-        }
-    }, 50);
-
-</script>
-
-
+<!-- Tools have JQuery Already-->
+<!--<script-->
+        <!--src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+        <!--integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="-->
+        <!--crossorigin="anonymous"></script>-->
 
 
 
@@ -51,3 +19,33 @@
 <!-- end GoViral install code -->
 
 
+<script>
+
+    const removeWatermark = setInterval(function() {
+        if ($('.watermark').length) {
+            clearInterval(removeWatermark);
+            $(".watermark").remove();
+        }
+    }, 50);
+
+    const changeLinkedInShareUrl = setInterval(function() {
+        if ($('.call-to-action').length) {
+            clearInterval(changeLinkedInShareUrl);
+
+            $(".call-to-action").find("h3").text("Share the movement to Simplify Arranging Meetings to LinkedIn in 1 click and get instant access to CalApp");
+            $(".call-to-action").find("a").attr("href", "https://linkedin.com/oauth/v2/authorization?client_id=78qc2vpo15nubq&redirect_uri=https%3A%2F%2Fgoviral.growthtools.com%2Flinkedin%2Foauth%2Fcallback&response_type=code&scope=r_liteprofile+r_emailaddress+w_member_social&state=d8bf360e11db6dfa49d826460e3392ca");
+
+        }
+    }, 50);
+
+
+    const insertDisclaimer = setInterval(function() {
+        if ($('.decline-link').length) {
+            clearInterval(insertDisclaimer);
+
+            $(".decline-link").prepend("<small>Powered by our partner GoViral. Neither we nor GoViral access any of your LinkedIn personal information.</small><br/><br/>");
+
+        }
+    }, 50);
+
+</script>

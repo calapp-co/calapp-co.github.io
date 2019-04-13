@@ -1,14 +1,30 @@
 <!-- Easiest way to debug is to visit hosted page https://welcomely.growthtools.com/p/PDRZLKkzNtUSEXm?preview=true and run Js in console -->
 
-<script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous"></script>
+<!-- Tools have JQuery Already-->
+<!--<script-->
+<!--src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+<!--integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="-->
+<!--crossorigin="anonymous"></script>-->
+
+
+
+<!-- start Growth Tools code -->
+<script type="text/javascript">
+    (function() {
+        var l = window.location;
+        var e = document.createElement('script');
+        e.src = 'https://welcomely.growthtools.com/s/PDRZLKkzNtUSEXm.js?l='+l;
+        e.async = true; e.type = 'text/javascript';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(e, s);
+    })();
+</script>
+<!-- end Growth Tools code -->
+
 
 <script>
 
     const CHROME_APP_STORE_URL = "https://chrome.google.com/webstore/detail/pmppdciefklaghoocckgagpahmiibjnf";
-
 
     const verifyInviteCode = function(inviteCode) {
 
@@ -48,17 +64,3 @@
     }, 50);
 
 </script>
-
-
-<!-- start Growth Tools code -->
-<script type="text/javascript">
-    (function() {
-        var l = window.location;
-        var e = document.createElement('script');
-        e.src = 'https://welcomely.growthtools.com/s/PDRZLKkzNtUSEXm.js?l='+l;
-        e.async = true; e.type = 'text/javascript';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(e, s);
-    })();
-</script>
-<!-- end Growth Tools code -->
