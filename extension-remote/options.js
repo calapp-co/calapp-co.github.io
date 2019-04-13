@@ -131,7 +131,7 @@ function includeHTML() {
     var elementFound = false;
     for (i = 0; i < z.length; i++) {
         elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
+        /*search for elements with a certain attribute: */
         file = elmnt.getAttribute("w3-include-html");
         if (file) {
             elementFound = true;
