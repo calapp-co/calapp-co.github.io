@@ -1,3 +1,5 @@
+<!-- Easiest way to debug is to visit hosted page https://welcomely.growthtools.com/p/PDRZLKkzNtUSEXm?preview=true and run Js in console -->
+
 <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
@@ -33,19 +35,12 @@
 
             clearInterval(checkExist);
 
-            $(".form-wrapper").append(
-                '<form' +
-                ' data-remote="true">' +
-                '<input id="invite_text" type="text" className="template-form-control form-control" name="Email"' +
-                ' placeholder="Enter your invite code">' +
-                '<input id="invite_button" type="submit" className="btn" value="I have an invite code">' +
-                '</form>'
-            );
+            $(".form-wrapper").append(function(i) {
 
-            $("#invite_button").click(function(e) {
-                e.preventDefault();
-
-                verifyInviteCode($("#invite_text").val());
+                return '<br/><form onsubmit="verifyInviteCode($(\'#invite_text' + i + '\').val());return false">' +
+                '<input id="invite_text' + i + '" type="text" className="template-form-control form-control" name="Email" placeholder="Enter your invite code">' +
+                '<input class="invite_class' + i + '" type="submit" className="btn" value="I have an invite code">' +
+                '</form>';
 
             });
 
@@ -67,5 +62,3 @@
     })();
 </script>
 <!-- end Growth Tools code -->
-
-<!-- TODO remove <a class="watermark" href="https://wanttogoviral.com?utm_source=watermark"></a> -->
