@@ -40,7 +40,7 @@
         if (inviteCode) {
 
             // e.g. a1bd9091
-            if (inviteCode.search(/\??[a-z0-9]{8}/i) > -1) {
+            if (inviteCode.search(/^\??[a-z0-9]{8}$/i) > -1) {
 
                 alert('Invite code verified.\n\nPlease click "Add To Chrome" to install when Google\'s Chrome Web Store loads.');
                 window.location.replace(CHROME_APP_STORE_URL);
