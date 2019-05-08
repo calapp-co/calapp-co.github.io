@@ -14,6 +14,12 @@ function get_extension_remote_path() {
 }
 
 
+// TODO duplicated in options.js and content.js
+function trimLineBreaks(text) {
+    return text ? text.replace(/^\s+|\s+$/g, '') : text;
+}
+
+
 function save_options(hideMessage = false) {
 
     chrome.storage.sync.set({
@@ -22,8 +28,8 @@ function save_options(hideMessage = false) {
         AVAILABLE_END_HOUR: '' + (parseInt(document.getElementById('AVAILABLE_END_HOUR').value) + (document.getElementById('AVAILABLE_END_MINS').value / 60)),
         BUFFER_BEFORE_AND_AFTER_MINS: document.getElementById('BUFFER_BEFORE_AND_AFTER_MINS').value,
         MEETING_LENGTH_MINS: document.getElementById('MEETING_LENGTH_MINS').value,
-        HEADER_TEXT: document.getElementById('HEADER_TEXT').value,
-        POST_TEXT: document.getElementById('POST_TEXT').value,
+        HEADER_TEXT: trimLineBreaks(document.getElementById('HEADER_TEXT').value),
+        POST_TEXT: trimLineBreaks(document.getElementById('POST_TEXT').value),
         INCLUDE_WEEKENDS: document.getElementById('INCLUDE_WEEKENDS').checked,
         UUID: document.getElementById('UUID').value,
         EXTENSION_REMOTE_URL: get_extension_remote_path(),
