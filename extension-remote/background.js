@@ -1,15 +1,17 @@
+// Need to click "Inspect views" on Extensions page "background view" to see console.log()
+
 console.log('remote background.js loaded', new Date());
 
 // See manifest.json which defines regex of URLs to auto execute content script.
 // TODO also duplicated in options.js.
-const RUN_WHEN_LOADED = 'calapp';
+var RUN_WHEN_LOADED = 'calapp';
 
-const AGENDA_VIEW = 'agenda';
-const AGENDA_VIEW_RUN_WHEN_LOADED = AGENDA_VIEW + '?' + RUN_WHEN_LOADED;
-const CALENDAR_ESCAPED_URL = 'https:\\/\\/calendar\\.google\\.com\\/calendar.*\\/r';
-const CALENDAR_AGENDA_URL = CALENDAR_ESCAPED_URL.split('\\').join('').replace('.*', '') + '/' + AGENDA_VIEW_RUN_WHEN_LOADED;
+var AGENDA_VIEW = 'agenda';
+var AGENDA_VIEW_RUN_WHEN_LOADED = AGENDA_VIEW + '?' + RUN_WHEN_LOADED;
+var CALENDAR_ESCAPED_URL = 'https:\\/\\/calendar\\.google\\.com\\/calendar.*\\/r';
+var CALENDAR_AGENDA_URL = CALENDAR_ESCAPED_URL.split('\\').join('').replace('.*', '') + '/' + AGENDA_VIEW_RUN_WHEN_LOADED;
 //const CALENDAR_URL_REGEX = new RegExp(CALENDAR_ESCAPED_URL);
-const AGENDA_URL_REGEX = new RegExp(CALENDAR_ESCAPED_URL + '/' + AGENDA_VIEW);
+var AGENDA_URL_REGEX = new RegExp(CALENDAR_ESCAPED_URL + '/' + AGENDA_VIEW);
 
 
 chrome.runtime.openOptionsPage();
