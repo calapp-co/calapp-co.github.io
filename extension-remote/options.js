@@ -31,6 +31,7 @@ function save_options(hideMessage = false) {
         HEADER_TEXT: trimLineBreaks(document.getElementById('HEADER_TEXT').value),
         POST_TEXT: trimLineBreaks(document.getElementById('POST_TEXT').value),
         INCLUDE_WEEKENDS: document.getElementById('INCLUDE_WEEKENDS').checked,
+        SKIP_DAYS_WITH_ALL_DAY_EVENTS: document.getElementById('SKIP_DAYS_WITH_ALL_DAY_EVENTS').checked,
         UUID: document.getElementById('UUID').value,
         EXTENSION_REMOTE_URL: get_extension_remote_path(),
 
@@ -73,6 +74,7 @@ function restore_options(hideMessage = false) {
         HEADER_TEXT: "Hi \n\nI'm available:", // "for up to MEETING_LENGTH_MINS mins:"
         POST_TEXT: "Please let me know which is convenient for you or send me a calendar invite?\n\nThanks",
         INCLUDE_WEEKENDS: false,
+        SKIP_DAYS_WITH_ALL_DAY_EVENTS: false,
         UUID: uuidv4(),
         EXTENSION_REMOTE_URL: get_extension_remote_path(),
 
@@ -89,6 +91,7 @@ function restore_options(hideMessage = false) {
         document.getElementById('HEADER_TEXT').value = items['HEADER_TEXT'];
         document.getElementById('POST_TEXT').value = items['POST_TEXT'];
         document.getElementById('INCLUDE_WEEKENDS').checked = items['INCLUDE_WEEKENDS'];
+        document.getElementById('SKIP_DAYS_WITH_ALL_DAY_EVENTS').checked = items['SKIP_DAYS_WITH_ALL_DAY_EVENTS'];
         document.getElementById('UUID').value = items['UUID'] ? items['UUID'] : uuidv4();
 
         save_options(hideMessage);
