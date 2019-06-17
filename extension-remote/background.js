@@ -59,7 +59,27 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
         // On agenda page.
         chrome.tabs.executeScript(tab.id, {file: 'content.js'}, function() {
-            chrome.tabs.sendMessage(tab.id, 'does not matter executes chrome.runtime.onMessage.addListener()');
+
+            console.log('remote background.js: on agenda page and toolbar button clicked => notifying remote content.js');
+
+            chrome.tabs.sendMessage(tab.id, 'does not matter executes chrome.runtime.onMessage.addListener()', function(response) {
+
+                if (chrome.runtime.lastError && chrome.runtime.lastError.message && chrome.runtime.lastError.message.indexOf('Could not establish connection') !== -1) {
+
+                    // Failed to send message.
+                    console.error('remote background.js unable to send message to remote content.js');
+                    alert('Unable to load your availability - are you online?');
+
+                } else if(response && response.result !== true) {
+
+                    // Sent message OK but response sent error.
+                    console.error('remote background.js sent message to remote content.js but it returned error');
+                    alert('Unable to load your availability - please try again');
+
+                }
+
+            });
+
         });
 
     }
