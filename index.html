@@ -65,7 +65,8 @@ No need to update or pay for hosted calendar solutions, asking your contacts to 
                     window.location.replace(CHROME_APP_STORE_URL);
 
                 } else {
-                    alert('Hmmm, that invite code doesn\'t seem quite right.\n\nPlease try again.');
+                    // Do not raise a as other referrers attach query params e.g. /?fbclid=IwAR04FxGagMW6eHA0I54brU0ptL2GM4WCZ0mViqEk0kSU-_FktBxflvXtUt0
+                    //alert('Hmmm, that invite code doesn\'t seem quite right.\n\nPlease try again.');
                 }
 
             }
