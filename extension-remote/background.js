@@ -68,7 +68,17 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
                     // Failed to send message.
                     console.error('remote background.js unable to send message to remote content.js');
-                    alert('Unable to load your availability - are you online?');
+
+
+                    // TODO when updated extension hosted on Google to v0.0.4 then restore this alert and remove the double call?
+                    // alert('Unable to load your availability - are you online?');
+                    chrome.tabs.executeScript(tab.id, {file: 'content.js'}, function() {
+
+                        // TODO does this fix problem?
+                        // Try again as works second time click button.
+
+                    });
+
 
                 } else if(response && response.result !== true) {
 
