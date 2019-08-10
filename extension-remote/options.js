@@ -1,6 +1,35 @@
 console.log('remote options.js loaded', new Date());
 
 
+// TODO duplicated in content_raw.js and extension-remote/options.js
+function blink(element, time) {
+
+    function loop(){
+        element.style.visibility = "hidden";
+        setTimeout(function () {
+            element.style.visibility = "visible";
+        }, time);
+        timer = setTimeout(function () {
+            loop();
+        }, time * 2);
+        cleared = false;
+    }
+
+    var timer, cleared = true;
+
+    // expose methods
+    return {
+        start: function() {
+            if (cleared) loop();
+        },
+        stop: function() {
+            clearTimeout(timer);
+            cleared = true;
+        }
+    };
+
+}
+
 function get_extension_remote_path() {
 
     const bases = document.getElementsByTagName('base');
@@ -171,6 +200,20 @@ function includeHTML() {
 
         console.log('No more w3-include-html elements to replace');
 
+
+        document.getElementById("button").src = chrome.extension.getURL("button.png");
+
+        chrome.storage.sync.get({
+            UUID: null,
+        }, function(items) {
+
+            if (items['UUID'] === null) {
+                // First install.
+                blink(document.getElementById('quickStart'), 750).start();
+            }
+
+        });
+
         // Restore then save to generate UUID;
         //document.addEventListener('DOMContentLoaded', () => {
             restore_options(true);
@@ -201,6 +244,8 @@ function includeHTML() {
 
 
 }
+
+
 
 
 includeHTML();
