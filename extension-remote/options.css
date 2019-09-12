@@ -2,7 +2,7 @@ input, textarea {
     border: none;
     font-size: large;
     color: red;
-    background-color: transparent;
+    background-color: #d3d3d338;
 }
 input[type=number] {
     width: 35px;
