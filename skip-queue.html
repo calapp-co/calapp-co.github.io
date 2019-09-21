@@ -36,50 +36,50 @@
 
     <script>
 
-        const removeWatermark = setInterval(function() {
-
-            if (window.jQuery) {
-
-                if ($('.watermark').length) {
-                    clearInterval(removeWatermark);
-                    $(".watermark").remove();
-                }
-
-            }
-
-        }, 50);
-
-        const changeLinkedInShareUrl = setInterval(function() {
-
-            if (window.jQuery) {
-
-                if ($('.call-to-action').length) {
-                    clearInterval(changeLinkedInShareUrl);
-
-                    $(".call-to-action").find("h3").text("Just share on LinkedIn that you're trying out CalApp... and we'll give it to you FREE right now");
-                    $(".call-to-action").find("a").attr("href", "https://linkedin.com/oauth/v2/authorization?client_id=78qc2vpo15nubq&redirect_uri=https%3A%2F%2Fgoviral.growthtools.com%2Flinkedin%2Foauth%2Fcallback&response_type=code&scope=r_liteprofile+r_emailaddress+w_member_social&state=d8bf360e11db6dfa49d826460e3392ca");
-
-                }
-
-            }
-
-        }, 50);
-
-
-        const insertDisclaimer = setInterval(function() {
-
-            if (window.jQuery) {
-
-                if ($('.decline-link').length) {
-                    clearInterval(insertDisclaimer);
-
-                    $(".decline-link").prepend("<small>Powered by our partner GoViral. Neither we nor GoViral access any of your LinkedIn personal information.</small><br/><br/>");
-
-                }
-
-            }
-
-        }, 50);
+        // const removeWatermark = setInterval(function() {
+        //
+        //     if (window.jQuery) {
+        //
+        //         if ($('.watermark').length) {
+        //             clearInterval(removeWatermark);
+        //             $(".watermark").remove();
+        //         }
+        //
+        //     }
+        //
+        // }, 50);
+        //
+        // const changeLinkedInShareUrl = setInterval(function() {
+        //
+        //     if (window.jQuery) {
+        //
+        //         if ($('.call-to-action').length) {
+        //             clearInterval(changeLinkedInShareUrl);
+        //
+        //             $(".call-to-action").find("h3").text("Just share on LinkedIn that you're trying out CalApp... and we'll give it to you FREE right now");
+        //             $(".call-to-action").find("a").attr("href", "https://linkedin.com/oauth/v2/authorization?client_id=78qc2vpo15nubq&redirect_uri=https%3A%2F%2Fgoviral.growthtools.com%2Flinkedin%2Foauth%2Fcallback&response_type=code&scope=r_liteprofile+r_emailaddress+w_member_social&state=d8bf360e11db6dfa49d826460e3392ca");
+        //
+        //         }
+        //
+        //     }
+        //
+        // }, 50);
+        //
+        //
+        // const insertDisclaimer = setInterval(function() {
+        //
+        //     if (window.jQuery) {
+        //
+        //         if ($('.decline-link').length) {
+        //             clearInterval(insertDisclaimer);
+        //
+        //             $(".decline-link").prepend("<small>Powered by our partner GoViral. Neither we nor GoViral access any of your LinkedIn personal information.</small><br/><br/>");
+        //
+        //         }
+        //
+        //     }
+        //
+        // }, 50);
 
     </script>
 
