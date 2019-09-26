@@ -75,28 +75,28 @@ No need to update or pay for hosted calendar solutions, asking your contacts to 
 
         verifyInviteCode(window.location.search);
 
-        // const checkExist = setInterval(function() {
-        //
-        //     if (window.jQuery) {
-        //
-        //         if ($('.form-wrapper').length) {
-        //
-        //             clearInterval(checkExist);
-        //
-        //             $(".form-wrapper").append(function (i) {
-        //
-        //                 return '<br/><form onsubmit="verifyInviteCode($(\'#invite_text' + i + '\').val());return false">' +
-        //                     '<input id="invite_text' + i + '" type="text" className="template-form-control form-control" name="Email" placeholder="Enter your invite code">' +
-        //                     '<input class="invite_class' + i + '" type="submit" className="btn" value="I have an invite code">' +
-        //                     '</form>';
-        //
-        //             });
-        //
-        //         }
-        //
-        //     }
-        //
-        // }, 50);
+        const checkExist = setInterval(function() {
+
+            if (window.jQuery) {
+
+                if ($('.form-wrapper').length) {
+
+                    clearInterval(checkExist);
+
+                    $(".form-wrapper").append(function (i) {
+
+                        return '<br/><form onsubmit="verifyInviteCode($(\'#invite_text' + i + '\').val());return false">' +
+                            '<input id="invite_text' + i + '" type="text" className="template-form-control form-control" name="Email" placeholder="Enter your invite code">' +
+                            '<input class="invite_class' + i + '" type="submit" className="btn" value="I have an invite code">' +
+                            '</form>';
+
+                    });
+
+                }
+
+            }
+
+        }, 50);
 
     </script>
 
