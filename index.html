@@ -94,13 +94,13 @@ No need to update or pay for hosted calendar solutions, asking your contacts to 
 
         verifyInviteCode(window.location.search);
 
-        const checkExist = setInterval(function() {
+        const checkFormExist = setInterval(function() {
 
             if (window.jQuery) {
 
                 if ($('.form-wrapper').length) {
 
-                    clearInterval(checkExist);
+                    clearInterval(checkFormExist);
 
                     $(".form-wrapper").append(function (i) {
 
@@ -117,9 +117,28 @@ No need to update or pay for hosted calendar solutions, asking your contacts to 
 
         }, 50);
 
-    </script>
 
-    Read our top tips for <a href="scheduling_productivity.html">scheduling productivity</a>.
+        const checkBodyContentExists = setInterval(function() {
+
+            if (window.jQuery) {
+
+                if ($('.post-section').length) {
+
+                    clearInterval(checkBodyContentExists);
+
+                    $(".post-section").append(function (i) {
+
+                        return '<div class="section-title container"><h2>Tips for <a href="scheduling_productivity.html">scheduling productivity</h2></div>';
+
+                    });
+
+                }
+
+            }
+
+        }, 50);
+
+    </script>
 
 </head>
 <body>
