@@ -1,2 +1,3 @@
 extension-remote/node_modules
 extension-remote/*_raw.js
+*.DS_STORE
