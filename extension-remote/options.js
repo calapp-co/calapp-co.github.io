@@ -200,7 +200,6 @@ function includeHTML() {
 
         console.log('No more w3-include-html elements to replace');
 
-
         document.getElementById("button").src = chrome.extension.getURL("button.png");
 
         chrome.storage.sync.get({
@@ -237,6 +236,8 @@ function includeHTML() {
         document.getElementById('editPostText').addEventListener('click', () => {
             selectTextArea('POST_TEXT');
         });
+
+        document.getElementById('not_loaded').innerHTML = '';
 
         selectTextArea('HEADER_TEXT');
 
