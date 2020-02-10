@@ -73,7 +73,7 @@
     color: white;
 }
 .loader--text:after {
-    content: "CalApp is crunching your availability";
+    content: "CalApp by ShareAvailability.com is crunching your availability";
     font-weight: bold;
     animation-name: loading-text;
     animation-duration: 3s;
@@ -96,15 +96,15 @@
 }
 @keyframes loading-text {
     0% {
-        content: "CalApp is crunching your availability";
+        content: "CalApp by ShareAvailability.com is crunching your availability";
     }
     25% {
-        content: "CalApp is crunching your availability.";
+        content: "CalApp by ShareAvailability.com is crunching your availability.";
     }
     50% {
-        content: "CalApp is crunching your availability..";
+        content: "CalApp by ShareAvailability.com is crunching your availability..";
     }
     75% {
-        content: "CalApp is crunching your availability...";
+        content: "CalApp by ShareAvailability.com is crunching your availability...";
     }
 }
