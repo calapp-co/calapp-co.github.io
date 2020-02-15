@@ -48,6 +48,13 @@ No need to update or pay for hosted calendar solutions, asking your contacts to 
 
     <link rel="canonical" href="https://shareavailability.com/"/>
 
+    <script type="text/javascript">
+        // Welcom.ly does not work on /index.html
+        if (window.location.pathname !== '/') {
+            window.location.replace('https://shareavailability.com/');
+        }
+    </script>
+
     <!-- start Growth Tools code -->
     <script type="text/javascript">
         (function() {
