@@ -9,12 +9,18 @@
 
 <div class="bgimg">
 
-<textarea id="HEADER_TEXT" rows="3" cols="80"></textarea><img src="editable.png" class="editable" id="editHeaderText"/><br/><br/>
-    <div id="dates-and-times-border"><span id="dates-and-times">CalApp by ShareAvailability.com will insert a list of days and times you are available for meetings of <strong>at least</strong><input type="number" min="1" max="480" id="MEETING_LENGTH_MINS" placeholder="60"/>minutes between hours of (24 hour clock)
-    <input type="number" min="0" max="24" id="AVAILABLE_START_HOUR" placeholder="09"/><strong>:</strong><input type="number" min="00" max="59" id="AVAILABLE_START_MINS" placeholder="00"/>and
-    <input type="number" min="0" max="24" id="AVAILABLE_END_HOUR" placeholder="17"/><strong>:</strong><input type="number" min="00" max="59" id="AVAILABLE_END_MINS" placeholder="30"/>with at least
-    <input type="number" min="0" max="23" id="BUFFER_BEFORE_AND_AFTER_MINS" placeholder="10"/>minutes before and after existing meetings.
-</span></div>
+<textarea id="HEADER_TEXT" rows="3" cols="80"></textarea><img src="editable.png" class="editable" id="editHeaderText"/>
+<br/>
+
+<div id="dates-and-times-border">
+    <span id="dates-and-times">CalApp by ShareAvailability.com will insert a list of days and times you are available for meetings of <strong>at least</strong><input type="number" min="1" max="480" id="MEETING_LENGTH_MINS" placeholder="60"/>minutes between hours of (24 hour clock)
+        <input type="number" min="0" max="24" id="AVAILABLE_START_HOUR" placeholder="09"/><strong>:</strong><input type="number" min="00" max="59" id="AVAILABLE_START_MINS" placeholder="00"/>and
+        <input type="number" min="0" max="24" id="AVAILABLE_END_HOUR" placeholder="17"/><strong>:</strong><input type="number" min="00" max="59" id="AVAILABLE_END_MINS" placeholder="30"/>with at least
+        <input type="number" min="0" max="23" id="BUFFER_BEFORE_AND_AFTER_MINS" placeholder="10"/>minutes before and after existing meetings.
+        <br/>If the recipient is in a different timezone to you, you can set an offset of<input type="number" min="-23" max="23" id="RECIPIENT_TIMEZONE_OFFSET_HOURS" placeholder="0"/> hours and<input type="number" min="-59" max="59" id="RECIPIENT_TIMEZONE_OFFSET_MINS" placeholder="0"/> minutes to add/subtract from your start and end times to convert your availability to their local timezone.
+    </span>
+</div>
+
 <textarea id="POST_TEXT" rows="3" cols="80"></textarea><img src="editable.png" class="editable" id="editPostText"/>
 
 </div>

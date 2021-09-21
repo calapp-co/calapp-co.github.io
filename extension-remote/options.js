@@ -63,6 +63,8 @@ function save_options(hideMessage = false) {
         SKIP_DAYS_WITH_ALL_DAY_EVENTS: document.getElementById('SKIP_DAYS_WITH_ALL_DAY_EVENTS').checked,
         UUID: document.getElementById('UUID').value,
         EXTENSION_REMOTE_URL: get_extension_remote_path(),
+        RECIPIENT_TIMEZONE_OFFSET_HOURS: document.getElementById('RECIPIENT_TIMEZONE_OFFSET_HOURS').value,
+        RECIPIENT_TIMEZONE_OFFSET_MINS: document.getElementById('RECIPIENT_TIMEZONE_OFFSET_MINS').value,
 
     }, function() {
 
@@ -106,6 +108,9 @@ function restore_options(hideMessage = false) {
         SKIP_DAYS_WITH_ALL_DAY_EVENTS: false,
         UUID: uuidv4(),
         EXTENSION_REMOTE_URL: get_extension_remote_path(),
+        RECIPIENT_TIMEZONE_OFFSET_HOURS: '',
+        RECIPIENT_TIMEZONE_OFFSET_MINS: '',
+
 
     }, function(items) {
 
@@ -122,6 +127,8 @@ function restore_options(hideMessage = false) {
         document.getElementById('INCLUDE_WEEKENDS').checked = items['INCLUDE_WEEKENDS'];
         document.getElementById('SKIP_DAYS_WITH_ALL_DAY_EVENTS').checked = items['SKIP_DAYS_WITH_ALL_DAY_EVENTS'];
         document.getElementById('UUID').value = items['UUID'] ? items['UUID'] : uuidv4();
+        document.getElementById('RECIPIENT_TIMEZONE_OFFSET_HOURS').value = items['RECIPIENT_TIMEZONE_OFFSET_HOURS'];
+        document.getElementById('RECIPIENT_TIMEZONE_OFFSET_MINS').value = items['RECIPIENT_TIMEZONE_OFFSET_MINS'];
 
         save_options(hideMessage);
 
